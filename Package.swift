@@ -104,7 +104,7 @@ var awsCCalPlatformExcludes =
 //////////////////////////////////////////////////////////////////////
 /// s2n-tls
 //////////////////////////////////////////////////////////////////////
-#if os(Linux) || os(Android)
+#if os(Linux)
   let s2nExcludes = [
     "bin", "codebuild", "coverage", "docker-images",
     "docs", "lib",
@@ -148,7 +148,7 @@ var awsCIoPlatformExcludes =
   ] + excludesFromAll
 var cSettingsIO = cSettings
 
-#if os(Linux) || os(Android)
+#if os(Linux)
   ioDependencies.append("S2N_TLS")
   cSettingsIO.append(.define("USE_S2N"))
 #endif
